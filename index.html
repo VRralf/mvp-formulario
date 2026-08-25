@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Propuesta de Implementación: Onboarding Digital - R&D Software Craft</title>
   <!-- Favicon R&D Software Craft -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23064E3B'/><text x='50' y='64' font-size='42' font-family='sans-serif' font-weight='900' fill='%2310B981' text-anchor='middle'>R&amp;D</text></svg>">
+  <link rel="icon" href="logo-siglas.png" type="image/png">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Montserrat + Inter -->
@@ -88,17 +88,9 @@
       <!-- Logo Oficial R&D Software Craft -->
       <div class="flex items-center justify-between w-full sm:w-auto gap-4">
         <div class="flex items-center gap-3">
-          <!-- Isotipo Vectorial R&D -->
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#047857] p-1 border border-emerald-400/40 shadow-inner flex items-center justify-center shrink-0">
-            <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Letra R -->
-              <path d="M22 28 V72 M22 28 H40 C48 28 52 32 52 40 C52 48 48 52 40 52 H22 M35 52 L50 72" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Ampersand & central sutil -->
-              <circle cx="50" cy="50" r="3" fill="#34D399"/>
-              <!-- Letra D -->
-              <path d="M58 28 V72 M58 28 H68 C80 28 86 36 86 50 C86 64 80 72 68 72 H58" stroke="#34D399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+          <!-- Isotipo Oficial R&D (logo-siglas.png) -->
+          <img src="logo-siglas.png" alt="R&D Software Craft Logo" 
+            class="w-10 h-10 rounded-xl object-cover border border-emerald-400/40 shadow-md shrink-0 ring-1 ring-emerald-500/20">
           <div>
             <div class="text-lg sm:text-xl font-black font-brand tracking-tight text-white leading-none flex items-center gap-1.5">
               R&amp;D <span class="font-normal text-emerald-400 text-xs tracking-wider uppercase">Software Craft</span>
@@ -133,41 +125,64 @@
   <!-- HERO SECTION CON IDENTIDAD R&D EMERALD     -->
   <!-- ========================================== -->
   <section class="bg-gradient-to-br from-[#0B1E19] via-[#064E3B] to-[#022C22] text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden shadow-inner" style="background: linear-gradient(135deg, #0B1E19 0%, #064E3B 50%, #022C22 100%) !important; color: #FFFFFF !important;">
-    <div class="max-w-5xl mx-auto relative z-10 space-y-5 sm:space-y-6">
+    
+    <!-- Resplandor de fondo ambiental verde -->
+    <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       
-      <div class="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-emerald-400/40 text-xs font-bold font-brand uppercase tracking-wider text-emerald-300">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        R&amp;D Software Craft • Propuesta de Implementación
-      </div>
-
-      <h1 class="text-2xl sm:text-5xl font-black font-brand text-white tracking-tight leading-tight max-w-4xl" style="color: #FFFFFF !important;">
-        Digitalización Integral del Proceso de Alta y Onboarding de Clientes
-      </h1>
-
-      <p class="text-sm sm:text-xl text-slate-200 font-light max-w-3xl leading-relaxed">
-        Plataforma web ágil, cerrada e independiente para erradicar las planillas manuales, certificar condiciones cambiarias y centralizar legajos impositivos para <strong class="text-white font-semibold">Fracht Group Argentina</strong>.
-      </p>
-
-      <div class="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/15">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center font-brand font-bold text-sm text-emerald-300 border border-emerald-400/30 shrink-0">
-            EM
-          </div>
-          <div>
-            <div class="text-[11px] text-slate-300 font-medium">Liderazgo &amp; Gestión del Proyecto:</div>
-            <div class="text-sm font-bold font-brand text-white">Eduardo Rafael Mendoza</div>
-            <div class="text-[11px] text-emerald-300 font-medium">Project Manager • R&amp;D Software Craft</div>
-          </div>
+      <!-- Columna Izquierda: Información de Propuesta -->
+      <div class="lg:col-span-8 space-y-5 sm:space-y-6">
+        <div class="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-emerald-400/40 text-xs font-bold font-brand uppercase tracking-wider text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          R&amp;D Software Craft • Propuesta de Implementación
         </div>
 
-        <div class="w-full sm:w-auto">
-          <a href="demo.html" 
-            class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-[#0B1E19] font-black font-brand text-xs uppercase tracking-wider rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-            <span>Explorar Demo Interactiva</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
+        <h1 class="text-2xl sm:text-5xl font-black font-brand text-white tracking-tight leading-tight max-w-4xl" style="color: #FFFFFF !important;">
+          Digitalización Integral del Proceso de Alta y Onboarding de Clientes
+        </h1>
+
+        <p class="text-sm sm:text-xl text-slate-200 font-light max-w-3xl leading-relaxed">
+          Plataforma web ágil, cerrada e independiente para erradicar las planillas manuales, certificar condiciones cambiarias y centralizar legajos impositivos para <strong class="text-white font-semibold">Fracht Group Argentina</strong>.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/15">
+          <div class="flex items-center gap-3">
+            <img src="logo-siglas.png" alt="R&D" class="w-11 h-11 rounded-xl object-cover border border-emerald-400/50 shadow-md shrink-0 ring-1 ring-emerald-500/30">
+            <div>
+              <div class="text-[11px] text-slate-300 font-medium">Liderazgo &amp; Gestión del Proyecto:</div>
+              <div class="text-sm font-bold font-brand text-white">Eduardo Rafael Mendoza</div>
+              <div class="text-[11px] text-emerald-300 font-medium">Project Manager • R&amp;D Software Craft</div>
+            </div>
+          </div>
+
+          <div class="w-full sm:w-auto">
+            <a href="demo.html" 
+              class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-[#0B1E19] font-black font-brand text-xs uppercase tracking-wider rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              <span>Explorar Demo Interactiva</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Tarjeta de Presentación 3D del Logo R&D (Visible en pantallas medianas y grandes) -->
+      <div class="hidden lg:flex lg:col-span-4 justify-center">
+        <div class="relative group">
+          <!-- Glow ambiental trasero -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-500"></div>
+          
+          <div class="relative bg-[#0B1E19]/90 border-2 border-emerald-500/40 rounded-3xl p-5 shadow-2xl backdrop-blur-xl flex flex-col items-center text-center space-y-3">
+            <div class="relative w-48 h-48 rounded-2xl overflow-hidden shadow-inner border border-emerald-400/30 bg-black/40 p-1">
+              <img src="logo.png" alt="R&D Software Craft Emblem" class="w-full h-full object-cover rounded-xl transform group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="space-y-0.5">
+              <div class="text-xs font-black font-brand tracking-wider text-white uppercase">R&amp;D Software Craft</div>
+              <div class="text-[10px] text-emerald-300 font-mono tracking-widest uppercase">Boutique Engineering</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -513,11 +528,14 @@
 
     <!-- 5. FIRMA Y RESPONSABLE TÉCNICO -->
     <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-      <div class="space-y-1">
-        <div class="text-[10px] sm:text-xs font-bold font-brand uppercase tracking-wider text-slate-400">Responsable de Gestión del Proyecto</div>
-        <h3 class="text-xl sm:text-2xl font-black font-brand text-[#064E3B]">Eduardo Rafael Mendoza</h3>
-        <p class="text-xs text-slate-600 font-medium">Project Manager</p>
-        <p class="text-[11px] text-emerald-700 font-bold">R&amp;D Software Craft • Boutique Software Engineering</p>
+      <div class="flex items-center gap-4">
+        <img src="logo-siglas.png" alt="R&D Software Craft" class="w-14 h-14 rounded-2xl object-cover border border-emerald-400/40 shadow-sm shrink-0 ring-1 ring-emerald-500/20">
+        <div class="space-y-0.5">
+          <div class="text-[10px] sm:text-xs font-bold font-brand uppercase tracking-wider text-slate-400">Responsable de Gestión del Proyecto</div>
+          <h3 class="text-xl sm:text-2xl font-black font-brand text-[#064E3B]">Eduardo Rafael Mendoza</h3>
+          <p class="text-xs text-slate-600 font-medium">Project Manager</p>
+          <p class="text-[11px] text-emerald-700 font-bold">R&amp;D Software Craft • Boutique Software Engineering</p>
+        </div>
       </div>
 
       <div class="w-full sm:w-auto">
@@ -537,8 +555,12 @@
   <!-- FOOTER INSTITUCIONAL R&D SOFTWARE CRAFT    -->
   <!-- ========================================== -->
   <footer class="bg-[#0B1E19] text-slate-400 py-6 border-t border-[#064E3B] text-xs text-center">
-    <div class="max-w-7xl mx-auto px-4 space-y-1">
-      <p class="font-brand font-medium text-slate-300">R&amp;D Software Craft &copy; 2026 • Documento de Implementación Técnica y Comercial</p>
+    <div class="max-w-7xl mx-auto px-4 space-y-2 flex flex-col items-center justify-center">
+      <div class="flex items-center gap-2">
+        <img src="logo-siglas.png" alt="R&D" class="w-5 h-5 rounded-md object-cover border border-emerald-400/40">
+        <span class="font-brand font-bold text-white text-xs">R&amp;D Software Craft</span>
+      </div>
+      <p class="font-brand font-medium text-slate-300 text-[11px]">R&amp;D Software Craft &copy; 2026 • Documento de Implementación Técnica y Comercial</p>
       <p class="text-[10px] text-slate-400">Preparado exclusivamente para evaluación y contratación por parte de Fracht Group Argentina.</p>
     </div>
   </footer>
