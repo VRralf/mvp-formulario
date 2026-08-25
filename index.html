@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Fracht Group Argentina - Onboarding Digital de Clientes (MVP Demo)</title>
+  <!-- Favicon Oficial Fracht Group -->
+  <link rel="icon" href="https://www.frachtgroup.com/themes/custom/fracht/favicon.ico" type="image/x-icon">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Montserrat (Oficial Fracht) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fracht: {
+              navy: '#003B64',
+              brandNavy: '#183650',
+              petrol: '#0A4D74',
+              slate: '#1C476C',
+              bg: '#F8FAFC',
+              card: '#FFFFFF'
+            }
+          },
+          fontFamily: {
+            brand: ['Montserrat', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+
+  <!-- ========================================== -->
+  <!-- BARRA SUPERIOR DE CONTROL DE DEMOSTRACIÓN -->
+  <!-- ========================================== -->
+  <header class="bg-[#183650] border-b border-[#0A4D74] text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-0 sm:h-16 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+      
+      <!-- Indicador Demo & Título -->
+      <div class="flex items-center justify-between w-full sm:w-auto gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+          <span class="text-[11px] sm:text-xs font-bold font-brand uppercase tracking-wider text-slate-200">MVP Demo</span>
+        </div>
+        <span class="text-[10px] sm:text-[11px] font-brand font-semibold bg-[#003B64] text-sky-200 px-2 py-0.5 rounded-full border border-sky-800">Fracht Group Argentina</span>
+      </div>
+
+      <!-- Selector de Vistas de la Demo (Optimizado para Touch/Mobile) -->
+      <div class="flex items-center bg-slate-900/80 p-1 rounded-xl border border-slate-700/60 w-full sm:w-auto justify-center">
+        <button id="btn-view-form" class="flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 text-xs font-bold font-brand rounded-lg bg-[#003B64] text-white shadow-sm transition text-center">
+          🌐 Formulario Cliente
+        </button>
+        <button id="btn-view-admin" class="flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 text-xs font-medium font-brand rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition text-center">
+          🔐 Panel Admin
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- VISTA 1: FORMULARIO PÚBLICO DEL CLIENTE   -->
+  <!-- ========================================== -->
+  <main id="view-form" class="view-panel flex-1 py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl sm:rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+      
+      <!-- Cabecera Institucional Mobile-First -->
+      <div class="p-4 sm:p-8 border-b border-slate-100 flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-4 bg-gradient-to-b from-slate-50/70 to-white">
+        <div>
+          <h1 class="text-xl sm:text-3xl font-black font-brand text-[#003B64] tracking-tight leading-tight">
+            Alta / Actualización de Datos Clientes
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">
+            Formulario oficial de registro comercial y legajo digital respaldatorio.
+          </p>
+        </div>
+
+        <!-- Logo e Isotipo Oficial Fracht Group Argentina -->
+        <div class="flex items-center gap-2.5 sm:gap-3 self-start sm:self-center shrink-0">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#003B64] flex items-center justify-center shadow-md p-1.5 sm:p-2 shrink-0">
+            <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="46" stroke="white" stroke-width="7" />
+              <path d="M8 40 Q 50 8 92 40" stroke="white" stroke-width="6" fill="none" />
+              <path d="M12 65 Q 50 35 88 65" stroke="white" stroke-width="6" fill="none" />
+              <path d="M50 4 Q 30 50 50 96" stroke="white" stroke-width="6" fill="none" />
+              <path d="M50 4 Q 70 50 50 96" stroke="white" stroke-width="6" fill="none" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-lg sm:text-2xl font-black font-brand tracking-tight text-[#003B64] leading-none">
+              Fracht <span class="font-normal text-slate-600 text-sm sm:text-base">GROUP</span>
+            </div>
+            <div class="text-[10px] sm:text-[11px] font-bold font-brand text-[#0A4D74] tracking-widest uppercase mt-0.5">Argentina</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario Principal -->
+      <form id="client-onboarding-form" class="p-4 sm:p-8 space-y-6 sm:space-y-8">
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: DATOS GENERALES DEL CLIENTE     -->
+        <!-- ========================================== -->
+        <div>
+          <div class="mb-4 sm:mb-5">
+            <span class="fracht-pill">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+              <span>1. Datos Generales del Cliente</span>
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Razón Social <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="input-razon-social" required placeholder="Ej. Logística Continental S.A." 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Nombre Comercial (Fantasía)
+              </label>
+              <input type="text" id="input-nombre-comercial" placeholder="Ej. Continental Cargo" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                CUIT <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="input-cuit" required placeholder="XX-XXXXXXXX-X" maxlength="13" inputmode="numeric"
+                class="w-full px-3.5 py-2.5 text-sm font-mono rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Dirección Legal <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="input-direccion" required placeholder="Calle, Número, Piso, Localidad, Provincia" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Teléfono de Contacto <span class="text-rose-500">*</span>
+              </label>
+              <input type="tel" id="input-telefono" required placeholder="+54 11 4000-0000" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Correo Electrónico Principal <span class="text-rose-500">*</span>
+              </label>
+              <input type="email" id="input-email" required placeholder="contacto@empresa.com.ar" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Persona de Contacto <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="input-contacto" required placeholder="Nombre y Apellido" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Mail Cobranzas / Facturas <span class="text-rose-500">*</span>
+              </label>
+              <input type="email" id="input-email-cobranzas" required placeholder="facturacion@empresa.com.ar" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1">
+                Condición / Cuenta Corriente (Referencias)
+              </label>
+              <input type="text" id="input-ctacte" placeholder="Información de cuenta bancaria o condición comercial" 
+                class="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64] transition bg-slate-50/50 hover:bg-white focus:bg-white">
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: CONDICIONES CAMBIARIAS (AUDIO)  -->
+        <!-- ========================================== -->
+        <div class="pt-4 border-t border-slate-100">
+          <div class="mb-4 sm:mb-5">
+            <span class="fracht-pill">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>2. Condiciones Comerciales y Cambiarias</span>
+            </span>
+          </div>
+
+          <div class="space-y-4 bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200">
+            
+            <!-- Requerimiento 1 del Audio: Cláusula tipo de cambio día de pago -->
+            <div class="flex items-start gap-2.5 sm:gap-3">
+              <input type="checkbox" id="check-clausula-fx" required checked 
+                class="mt-1 w-4 h-4 text-[#003B64] rounded border-slate-300 focus:ring-[#003B64]">
+              <label for="check-clausula-fx" class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                <strong class="text-[#003B64]">Cláusula de Tipo de Cambio:</strong> Acepto que las operaciones en moneda extranjera se liquidarán al tipo de cambio oficial correspondiente al <strong>día efectivo de pago</strong>. <span class="text-rose-500">*</span>
+              </label>
+            </div>
+
+            <!-- Requerimiento 2 del Audio: Selector Sí/No Notas de Débito -->
+            <div class="pt-3 border-t border-slate-200">
+              <label class="block text-xs font-bold font-brand uppercase tracking-wider text-[#1C476C] mb-1.5">
+                ¿Su empresa acepta Notas de Débito por Diferencia de Cambio? <span class="text-rose-500">*</span>
+              </label>
+              <p class="text-[11px] sm:text-xs text-slate-500 mb-3">
+                Conocer si sus políticas internas admiten notas de débito por variaciones cambiarias.
+              </p>
+
+              <div class="flex flex-row gap-2.5 max-w-md">
+                <button type="button" id="btn-nd-yes" class="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl font-bold font-brand text-xs bg-emerald-600 text-white shadow-sm flex items-center justify-center gap-1.5 border-2 border-emerald-600 transition">
+                  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>SÍ, ACEPTAMOS</span>
+                </button>
+                <button type="button" id="btn-nd-no" class="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl font-semibold font-brand text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center justify-center gap-1.5 border-2 border-transparent transition">
+                  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  <span>NO ACEPTAMOS</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: DOCUMENTACIÓN LEGAL Y FISCAL    -->
+        <!-- ========================================== -->
+        <div class="pt-4 border-t border-slate-100">
+          <div class="mb-2">
+            <span class="fracht-pill">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span>3. Documentación Legal y Fiscal</span>
+            </span>
+          </div>
+          <p class="text-[11px] sm:text-xs text-slate-500 mb-4 italic">
+            Adjunte la documentación respaldatoria en PDF (máx. 10 MB por archivo).
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            
+            <!-- 1. Constancia AFIP -->
+            <div>
+              <label class="block text-xs font-bold font-brand text-slate-700 mb-1">
+                Constancia de Inscripción AFIP / ARCA <span class="text-rose-500">*</span>
+              </label>
+              <div id="drop-afip" class="pdf-dropzone p-3.5 sm:p-4 text-center cursor-pointer">
+                <input type="file" id="file-afip" accept=".pdf" class="hidden">
+                <svg class="w-7 h-7 sm:w-8 sm:h-8 mx-auto text-slate-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                <div class="text-xs font-medium text-slate-600">Arrastrar o tocar para adjuntar PDF</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Formato PDF</div>
+              </div>
+              <div id="info-afip" class="mt-1.5"></div>
+            </div>
+
+            <!-- 2. Estatuto -->
+            <div>
+              <label class="block text-xs font-bold font-brand text-slate-700 mb-1">
+                Estatuto o Contrato Social (Última versión) <span class="text-rose-500">*</span>
+              </label>
+              <div id="drop-estatuto" class="pdf-dropzone p-3.5 sm:p-4 text-center cursor-pointer">
+                <input type="file" id="file-estatuto" accept=".pdf" class="hidden">
+                <svg class="w-7 h-7 sm:w-8 sm:h-8 mx-auto text-slate-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                <div class="text-xs font-medium text-slate-600">Arrastrar o tocar para adjuntar PDF</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Formato PDF</div>
+              </div>
+              <div id="info-estatuto" class="mt-1.5"></div>
+            </div>
+
+            <!-- 3. Poderes -->
+            <div>
+              <label class="block text-xs font-bold font-brand text-slate-700 mb-1">
+                Poderes de Administración / Representación <span class="text-rose-500">*</span>
+              </label>
+              <div id="drop-poderes" class="pdf-dropzone p-3.5 sm:p-4 text-center cursor-pointer">
+                <input type="file" id="file-poderes" accept=".pdf" class="hidden">
+                <svg class="w-7 h-7 sm:w-8 sm:h-8 mx-auto text-slate-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                <div class="text-xs font-medium text-slate-600">Arrastrar o tocar para adjuntar PDF</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Formato PDF</div>
+              </div>
+              <div id="info-poderes" class="mt-1.5"></div>
+            </div>
+
+            <!-- 4. IIBB -->
+            <div>
+              <label class="block text-xs font-bold font-brand text-slate-700 mb-1">
+                Impuestos Provinciales / Municipales (IIBB) <span class="text-slate-400 font-normal">(Si aplica)</span>
+              </label>
+              <div id="drop-iibb" class="pdf-dropzone p-3.5 sm:p-4 text-center cursor-pointer">
+                <input type="file" id="file-iibb" accept=".pdf" class="hidden">
+                <svg class="w-7 h-7 sm:w-8 sm:h-8 mx-auto text-slate-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                <div class="text-xs font-medium text-slate-600">Arrastrar o tocar para adjuntar PDF</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Opcional - Formato PDF</div>
+              </div>
+              <div id="info-iibb" class="mt-1.5"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="pt-4 sm:pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <div class="text-[11px] text-slate-500 text-center sm:text-left">
+            Datos protegidos bajo estrictas políticas de confidencialidad de Fracht Group.
+          </div>
+          <button type="submit" id="btn-submit-form" 
+            class="w-full sm:w-auto px-6 sm:px-8 py-3.5 bg-[#003B64] hover:bg-[#0A4D74] text-white font-bold font-brand text-xs uppercase tracking-wider rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+            <span>Enviar Solicitud de Alta</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- VISTA 2: PANEL DE ADMINISTRACIÓN INTERNO  -->
+  <!-- ========================================== -->
+  <main id="view-admin" class="view-panel hidden-view flex-1 py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+
+      <!-- Header del Panel Mobile Responsive -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-black font-brand text-[#003B64]">Bandeja de Gestión de Clientes</h2>
+          <p class="text-xs text-slate-500">Monitoreo de solicitudes, auditoría de legajos y exportación contable.</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="btn-export-excel" class="flex-1 sm:flex-initial px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold font-brand rounded-xl shadow-xs flex items-center justify-center gap-1.5 transition">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span>Excel (.xlsx)</span>
+          </button>
+          <button id="btn-export-csv" class="flex-1 sm:flex-initial px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold font-brand rounded-xl shadow-xs transition text-center">
+            CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Métricas Rápidas (Grid Adaptativo) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
+        <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-2xs">
+          <div class="text-[10px] sm:text-[11px] font-bold font-brand text-slate-500 uppercase tracking-wider">Total Recibidas</div>
+          <div id="metric-total" class="text-xl sm:text-2xl font-black font-brand text-[#003B64] mt-1">4</div>
+        </div>
+        <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-2xs">
+          <div class="text-[10px] sm:text-[11px] font-bold font-brand text-amber-600 uppercase tracking-wider">Pendientes</div>
+          <div id="metric-pending" class="text-xl sm:text-2xl font-black font-brand text-amber-600 mt-1">2</div>
+        </div>
+        <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-2xs">
+          <div class="text-[10px] sm:text-[11px] font-bold font-brand text-emerald-600 uppercase tracking-wider">Aprobadas</div>
+          <div id="metric-approved" class="text-xl sm:text-2xl font-black font-brand text-emerald-600 mt-1">1</div>
+        </div>
+        <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-2xs">
+          <div class="text-[10px] sm:text-[11px] font-bold font-brand text-blue-600 uppercase tracking-wider">Cargadas ERP</div>
+          <div id="metric-loaded" class="text-xl sm:text-2xl font-black font-brand text-blue-600 mt-1">1</div>
+        </div>
+        <div class="col-span-2 sm:col-span-1 bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-2xs">
+          <div class="text-[10px] sm:text-[11px] font-bold font-brand text-indigo-600 uppercase tracking-wider">% Acepta N/D</div>
+          <div id="metric-nd-rate" class="text-xl sm:text-2xl font-black font-brand text-indigo-600 mt-1">50%</div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros (Scroll Horizontal en Mobile) y Buscador -->
+      <div class="bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200 shadow-2xs space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between gap-3">
+        <!-- Filtros con scroll suave en pantallas chicas -->
+        <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          <button data-filter="ALL" class="filter-btn shrink-0 px-3 py-1.5 text-xs font-bold font-brand rounded-lg bg-[#003B64] text-white border border-[#003B64] transition">Todos</button>
+          <button data-filter="PENDING" class="filter-btn shrink-0 px-3 py-1.5 text-xs font-bold font-brand rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Pendientes</button>
+          <button data-filter="APPROVED" class="filter-btn shrink-0 px-3 py-1.5 text-xs font-bold font-brand rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Aprobados</button>
+          <button data-filter="LOADED_ERP" class="filter-btn shrink-0 px-3 py-1.5 text-xs font-bold font-brand rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Cargados ERP</button>
+        </div>
+
+        <div class="relative w-full sm:w-72">
+          <input type="text" id="admin-search-input" placeholder="Buscar por Razón Social, CUIT..." 
+            class="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B64]">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- CONTENEDOR 1: CARDS PARA MOBILE (< md)     -->
+      <!-- ========================================== -->
+      <div id="admin-cards-container" class="grid grid-cols-1 gap-3 md:hidden">
+        <!-- Renderizado dinámico vía app.js -->
+      </div>
+
+      <!-- ========================================== -->
+      <!-- CONTENEDOR 2: TABLA PARA DESKTOP (>= md)   -->
+      <!-- ========================================== -->
+      <div class="hidden md:block bg-white rounded-2xl border border-slate-200 shadow-2xs overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold font-brand uppercase text-slate-500 tracking-wider">
+                <th class="py-3 px-4">ID</th>
+                <th class="py-3 px-4">Razón Social / Fantasía</th>
+                <th class="py-3 px-4">CUIT</th>
+                <th class="py-3 px-4">Contacto / Email</th>
+                <th class="py-3 px-4 text-center">Acepta N/D</th>
+                <th class="py-3 px-4 text-center">Estado</th>
+                <th class="py-3 px-4 text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-table-body" class="divide-y divide-slate-100">
+              <!-- Renderizado dinámico vía app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MODAL: CONFIRMACIÓN DE ENVÍO EXITOSO      -->
+  <!-- ========================================== -->
+  <div id="modal-success" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 z-50 hidden">
+    <div class="bg-white max-w-md w-full rounded-2xl shadow-xl border border-slate-100 p-5 sm:p-6 text-center animate-in fade-in zoom-in duration-200">
+      <div class="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg sm:text-xl font-black font-brand text-[#003B64] mb-1">¡Solicitud Enviada con Éxito!</h3>
+      <p class="text-xs text-slate-500 mb-4">Los datos y los PDFs adjuntos fueron registrados correctamente.</p>
+      
+      <div id="modal-success-details" class="text-left bg-slate-50 p-3 rounded-xl border border-slate-200 mb-4">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <button onclick="closeSuccessModal()" class="w-full py-3 bg-[#003B64] hover:bg-[#0A4D74] text-white text-xs font-bold font-brand uppercase tracking-wider rounded-xl transition">
+        Aceptar y Ver en Bandeja
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: DETALLE COMPLETO DE CLIENTE Y PDFS -->
+  <!-- ========================================== -->
+  <div id="modal-detail" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 z-50 hidden">
+    <div class="bg-white max-w-3xl w-full rounded-t-3xl sm:rounded-2xl shadow-xl border border-slate-100 overflow-hidden flex flex-col max-h-[92vh]">
+      
+      <!-- Header del Modal -->
+      <div class="p-4 sm:p-5 bg-[#183650] text-white flex items-center justify-between shrink-0">
+        <div>
+          <h3 id="modal-detail-title" class="text-base sm:text-lg font-bold font-brand leading-tight">Detalle de Solicitud</h3>
+          <p id="modal-detail-cuit" class="text-xs text-sky-200 font-mono">CUIT: --</p>
+        </div>
+        <button onclick="closeDetailModal()" class="text-slate-300 hover:text-white text-xl font-bold p-1">
+          ✕
+        </button>
+      </div>
+
+      <!-- Contenido scrolleable -->
+      <div id="modal-detail-body" class="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-6">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <!-- Footer con cambio de estado Mobile Responsive -->
+      <div class="p-3.5 sm:p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shrink-0">
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <label class="text-xs font-bold font-brand text-slate-600 shrink-0">Estado:</label>
+          <select id="modal-status-select" class="text-xs py-2 px-3 rounded-xl border border-slate-300 bg-white font-semibold flex-1 sm:flex-initial">
+            <option value="PENDING">Pendiente</option>
+            <option value="APPROVED">Aprobado</option>
+            <option value="LOADED_ERP">Cargado ERP</option>
+            <option value="REJECTED">Rechazado</option>
+          </select>
+          <button onclick="saveStatusChange()" class="px-3.5 py-2 text-xs font-bold font-brand bg-[#003B64] text-white rounded-xl hover:bg-[#0A4D74] shrink-0">
+            Guardar
+          </button>
+        </div>
+
+        <button onclick="closeDetailModal()" class="w-full sm:w-auto px-4 py-2 text-xs font-semibold text-slate-600 bg-white border border-slate-200 rounded-xl hover:bg-slate-100">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- TOAST NOTIFICATION                         -->
+  <!-- ========================================== -->
+  <div id="toast" class="bg-[#183650] text-white text-xs font-medium px-4 py-3 rounded-xl shadow-lg border border-[#0A4D74] flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    <span id="toast-message">Notificación de prueba</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

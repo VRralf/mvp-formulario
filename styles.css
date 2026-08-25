@@ -1,0 +1,129 @@
+/* Estilos Oficiales y Responsivos - Fracht Group Argentina */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #003B64;
+  --color-brand-navy: #183650;
+  --color-secondary: #0A4D74;
+  --color-text-dark: #1C476C;
+  --color-bg-page: #F8FAFC;
+  --font-brand: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-page);
+  color: #0F172A;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: var(--font-brand);
+}
+
+/* Píldoras de encabezado de sección corporativas oficiales */
+.fracht-pill {
+  background: linear-gradient(135deg, #003B64 0%, #0A4D74 100%);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.55rem 1.25rem;
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 59, 100, 0.18), 0 2px 4px -1px rgba(0, 59, 100, 0.08);
+}
+
+@media (min-width: 640px) {
+  .fracht-pill {
+    padding: 0.65rem 1.6rem;
+    font-size: 0.82rem;
+    gap: 0.5rem;
+  }
+}
+
+/* Estilo de Dropzone para PDFs */
+.pdf-dropzone {
+  border: 2px dashed #CBD5E1;
+  background-color: #FAFCFE;
+  border-radius: 0.75rem;
+  transition: all 0.25s ease-in-out;
+  touch-action: manipulation;
+}
+
+.pdf-dropzone:hover, .pdf-dropzone.dragover {
+  border-color: #003B64;
+  background-color: #EFF6FF;
+  box-shadow: 0 0 0 4px rgba(0, 59, 100, 0.06);
+}
+
+.pdf-dropzone.has-file {
+  border: 2px solid #059669;
+  background-color: #F0FDF4;
+}
+
+/* Tarjetas de Solicitudes Mobile */
+.mobile-submission-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-submission-card:active {
+  transform: scale(0.99);
+}
+
+/* Scrollbar horizontal oculta pero funcional para filtros mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Transiciones suaves de vistas */
+.view-panel {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.view-panel.hidden-view {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Toast notification */
+#toast {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1rem;
+  left: 1rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+}
+
+@media (min-width: 640px) {
+  #toast {
+    left: auto;
+    right: 1.5rem;
+    margin: 0;
+  }
+}
+
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
