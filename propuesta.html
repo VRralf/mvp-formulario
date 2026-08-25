@@ -3,28 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Propuesta de Implementación: MVP Onboarding Digital - Fracht Group Argentina</title>
-  <!-- Favicon Oficial Fracht Group -->
-  <link rel="icon" href="https://www.frachtgroup.com/themes/custom/fracht/favicon.ico" type="image/x-icon">
+  <title>Propuesta de Implementación: Onboarding Digital - R&D Software Craft</title>
+  <!-- Favicon R&D Software Craft -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23064E3B'/><text x='50' y='64' font-size='42' font-family='sans-serif' font-weight='900' fill='%2310B981' text-anchor='middle'>R&amp;D</text></svg>">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Montserrat (Oficial Fracht) + Inter -->
+  <!-- Google Fonts: Montserrat + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
+            rd: {
+              obsidian: '#0B1E19',
+              dark: '#064E3B',
+              primary: '#059669',
+              accent: '#10B981',
+              mint: '#34D399',
+              lightMint: '#ECFDF5',
+              surface: '#F8FAFC'
+            },
             fracht: {
               navy: '#003B64',
               brandNavy: '#183650',
               petrol: '#0A4D74',
-              slate: '#1C476C',
-              bg: '#F8FAFC',
-              card: '#FFFFFF'
+              slate: '#1C476C'
             }
           },
           fontFamily: {
@@ -36,49 +42,95 @@
       }
     }
   </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, h5, .brand-font {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .rd-pill {
+      background: linear-gradient(135deg, #064E3B 0%, #059669 100%);
+      color: #FFFFFF;
+      border-radius: 9999px;
+      padding: 0.55rem 1.35rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 6px -1px rgba(6, 78, 59, 0.25);
+    }
+    .card-hover-effect {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover-effect:hover {
+      transform: translateY(-2px);
+      border-color: #10B981;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.1);
+    }
+    @media print {
+      body { background-color: #FFFFFF; }
+      .no-print { display: none !important; }
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen antialiased flex flex-col">
 
   <!-- ========================================== -->
-  <!-- BARRA DE NAVEGACIÓN SUPERIOR INSTITUCIONAL -->
+  <!-- BARRA DE NAVEGACIÓN R&D SOFTWARE CRAFT     -->
   <!-- ========================================== -->
-  <header class="bg-[#183650] text-white border-b border-[#0A4D74] sticky top-0 z-50 shadow-md">
+  <header class="bg-[#0B1E19] text-white border-b border-[#064E3B] sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-0 sm:h-16 flex flex-col sm:flex-row items-center justify-between gap-2.5">
       
-      <!-- Logo Oficial Fracht Group -->
-      <div class="flex items-center justify-between w-full sm:w-auto gap-3">
+      <!-- Logo Oficial R&D Software Craft -->
+      <div class="flex items-center justify-between w-full sm:w-auto gap-4">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#003B64] flex items-center justify-center shadow-inner p-1.5 shrink-0">
+          <!-- Isotipo Vectorial R&D -->
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#047857] p-1 border border-emerald-400/40 shadow-inner flex items-center justify-center shrink-0">
             <svg class="w-full h-full text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="46" stroke="white" stroke-width="7" />
-              <path d="M8 40 Q 50 8 92 40" stroke="white" stroke-width="6" fill="none" />
-              <path d="M12 65 Q 50 35 88 65" stroke="white" stroke-width="6" fill="none" />
-              <path d="M50 4 Q 30 50 50 96" stroke="white" stroke-width="6" fill="none" />
-              <path d="M50 4 Q 70 50 50 96" stroke="white" stroke-width="6" fill="none" />
+              <!-- Letra R -->
+              <path d="M22 28 V72 M22 28 H40 C48 28 52 32 52 40 C52 48 48 52 40 52 H22 M35 52 L50 72" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Ampersand & central sutil -->
+              <circle cx="50" cy="50" r="3" fill="#34D399"/>
+              <!-- Letra D -->
+              <path d="M58 28 V72 M58 28 H68 C80 28 86 36 86 50 C86 64 80 72 68 72 H58" stroke="#34D399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <div>
-            <div class="text-lg sm:text-xl font-black font-brand tracking-tight text-white leading-none">
-              Fracht <span class="font-normal text-slate-300 text-sm">GROUP</span>
+            <div class="text-lg sm:text-xl font-black font-brand tracking-tight text-white leading-none flex items-center gap-1.5">
+              R&amp;D <span class="font-normal text-emerald-400 text-xs tracking-wider uppercase">Software Craft</span>
             </div>
-            <div class="text-[10px] font-bold font-brand text-sky-300 tracking-widest uppercase">Argentina</div>
+            <div class="text-[10px] font-medium text-slate-400">Boutique Software Engineering</div>
           </div>
         </div>
 
-        <span class="sm:hidden text-[10px] font-brand font-semibold bg-emerald-900/80 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-700">Nivel 1: MVP Ágil</span>
+        <!-- Badge Cliente Receptor -->
+        <div class="sm:hidden flex items-center gap-1.5 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-800 text-[10px] text-emerald-300 font-brand font-semibold">
+          <span>Para: Fracht Group</span>
+        </div>
       </div>
 
       <!-- Acciones de Cabecera y Navegación a Demo -->
-      <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+      <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+        <div class="hidden sm:flex items-center gap-1.5 bg-emerald-950/80 px-3 py-1.5 rounded-xl border border-emerald-800 text-xs text-slate-300 font-brand">
+          <span class="text-emerald-400 font-bold">Cliente:</span> Fracht Group Argentina
+        </div>
         <a href="index.html" 
-          class="flex-1 sm:flex-initial text-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-brand rounded-xl shadow-xs flex items-center justify-center gap-1.5 transition">
+          class="flex-1 sm:flex-initial text-center px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold font-brand rounded-xl shadow-xs flex items-center justify-center gap-1.5 transition">
           <span>🚀 Ver Demo Interactiva</span>
           <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
         <button onclick="window.print()" 
-          class="no-print px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold font-brand rounded-xl border border-slate-700 transition flex items-center gap-1.5 shrink-0">
+          class="no-print px-3 py-2 bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-bold font-brand rounded-xl border border-slate-700 transition flex items-center gap-1.5 shrink-0">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
           </svg>
@@ -89,18 +141,18 @@
   </header>
 
   <!-- ========================================== -->
-  <!-- HERO SECTION CON IDENTIDAD FRACHT GROUP   -->
+  <!-- HERO SECTION CON IDENTIDAD R&D EMERALD     -->
   <!-- ========================================== -->
-  <section class="bg-gradient-to-br from-[#183650] via-[#003B64] to-[#0A4D74] text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden shadow-inner" style="background: linear-gradient(135deg, #183650 0%, #003B64 50%, #0A4D74 100%) !important; color: #FFFFFF !important;">
+  <section class="bg-gradient-to-br from-[#0B1E19] via-[#064E3B] to-[#022C22] text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden shadow-inner" style="background: linear-gradient(135deg, #0B1E19 0%, #064E3B 50%, #022C22 100%) !important; color: #FFFFFF !important;">
     <div class="max-w-5xl mx-auto relative z-10 space-y-5 sm:space-y-6">
       
-      <div class="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-emerald-400/30 text-xs font-bold font-brand uppercase tracking-wider text-emerald-300">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-emerald-400/40 text-xs font-bold font-brand uppercase tracking-wider text-emerald-300">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Acuerdo de Implementación • Nivel 1: MVP Ágil
+        R&amp;D Software Craft • Propuesta de Implementación
       </div>
 
       <h1 class="text-2xl sm:text-5xl font-black font-brand text-white tracking-tight leading-tight max-w-4xl" style="color: #FFFFFF !important;">
-        Digitalización del Proceso de Alta y Onboarding de Clientes
+        Digitalización Integral del Proceso de Alta y Onboarding de Clientes
       </h1>
 
       <p class="text-sm sm:text-xl text-slate-200 font-light max-w-3xl leading-relaxed">
@@ -109,19 +161,19 @@
 
       <div class="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/15">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-brand font-bold text-sm text-sky-200 border border-white/20 shrink-0">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center font-brand font-bold text-sm text-emerald-300 border border-emerald-400/30 shrink-0">
             EM
           </div>
           <div>
-            <div class="text-[11px] text-slate-300 font-medium">Responsable del Proyecto:</div>
+            <div class="text-[11px] text-slate-300 font-medium">Liderazgo &amp; Gestión del Proyecto:</div>
             <div class="text-sm font-bold font-brand text-white">Eduardo Rafael Mendoza</div>
-            <div class="text-[11px] text-sky-300">Líder de Desarrollo & Soluciones Tecnológicas</div>
+            <div class="text-[11px] text-emerald-300 font-medium">Project Manager • R&amp;D Software Craft</div>
           </div>
         </div>
 
         <div class="w-full sm:w-auto">
           <a href="index.html" 
-            class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold font-brand text-xs uppercase tracking-wider rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-[#0B1E19] font-black font-brand text-xs uppercase tracking-wider rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
             <span>Explorar Demo Interactiva</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -141,25 +193,25 @@
     <!-- 1. ALCANCE DEL PROYECTO ACORDADO (NIVEL 1: MVP ÁGIL) -->
     <section class="space-y-5">
       <div>
-        <span class="fracht-pill">
+        <span class="rd-pill">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
           1. Alcance Funcional del MVP Ágil (Opción Seleccionada)
         </span>
-        <h2 class="text-xl sm:text-2xl font-black font-brand text-[#003B64] mt-3">Solución 100% Cerrada, Autónoma e Independiente</h2>
+        <h2 class="text-xl sm:text-2xl font-black font-brand text-[#064E3B] mt-3">Solución 100% Cerrada, Autónoma e Independiente</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         
         <!-- Módulo 1: Formulario Público -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 space-y-3.5 shadow-xs">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 space-y-3.5 shadow-xs card-hover-effect">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-sky-100 text-[#003B64] flex items-center justify-center font-bold shrink-0">
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold shrink-0">
               🌐
             </div>
             <div>
-              <h3 class="text-sm sm:text-base font-bold font-brand text-[#003B64]">Formulario Web del Cliente</h3>
+              <h3 class="text-sm sm:text-base font-bold font-brand text-[#064E3B]">Formulario Web del Cliente</h3>
               <p class="text-xs text-slate-500">Enlace directo sin instalaciones, adaptado a celulares y PC</p>
             </div>
           </div>
@@ -181,13 +233,13 @@
         </div>
 
         <!-- Módulo 2: Panel Administrativo -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 space-y-3.5 shadow-xs">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 space-y-3.5 shadow-xs card-hover-effect">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-sky-100 text-[#003B64] flex items-center justify-center font-bold shrink-0">
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold shrink-0">
               🔐
             </div>
             <div>
-              <h3 class="text-sm sm:text-base font-bold font-brand text-[#003B64]">Panel de Gestión Interno (Fracht)</h3>
+              <h3 class="text-sm sm:text-base font-bold font-brand text-[#064E3B]">Panel de Gestión Interno (Fracht)</h3>
               <p class="text-xs text-slate-500">Control administrativo centralizado con acceso seguro</p>
             </div>
           </div>
@@ -218,22 +270,22 @@
     <!-- 2. MATRIZ DE RESPONSABILIDADES Y COSTOS (NOSOTROS VS CLIENTE) -->
     <section class="space-y-5">
       <div>
-        <span class="fracht-pill">
+        <span class="rd-pill">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
           </svg>
           2. Matriz de Responsabilidades y Costos
         </span>
-        <h2 class="text-xl sm:text-2xl font-black font-brand text-[#003B64] mt-3">División Clara de Tareas y Compromisos</h2>
+        <h2 class="text-xl sm:text-2xl font-black font-brand text-[#064E3B] mt-3">División Clara de Tareas y Compromisos</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
         
-        <!-- De qué nos hacemos cargo Nosotros -->
+        <!-- De qué nos hacemos cargo Nosotros (R&D) -->
         <div class="bg-emerald-50/60 border-2 border-emerald-500/40 rounded-3xl p-5 sm:p-6 space-y-4 shadow-sm">
-          <div class="flex items-center gap-2 text-emerald-800 font-bold font-brand text-xs uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-emerald-900 font-bold font-brand text-xs uppercase tracking-wider">
             <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
-            De qué nos hacemos cargo Nosotros (Equipo de Desarrollo)
+            De qué se encarga R&amp;D Software Craft (Equipo de Desarrollo)
           </div>
           <p class="text-xs text-slate-600 font-medium">Incluido en los honorarios de desarrollo del MVP:</p>
 
@@ -244,7 +296,7 @@
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-600 font-bold text-sm leading-none">✓</span>
-              <span><strong>Desarrollo Frontend & Backend:</strong> Programación de la aplicación web completa, API de recepción de datos y panel de control.</span>
+              <span><strong>Desarrollo Frontend &amp; Backend:</strong> Programación de la aplicación web completa, API de recepción de datos y panel de control.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-600 font-bold text-sm leading-none">✓</span>
@@ -283,26 +335,26 @@
 
           <ul class="space-y-2.5 text-xs text-slate-700">
             <li class="flex items-start gap-2">
-              <span class="text-sky-700 font-bold text-sm leading-none">•</span>
+              <span class="text-emerald-700 font-bold text-sm leading-none">•</span>
               <span><strong>Servidor / Hosting Cloud:</strong> Abono mensual del servidor donde corre la aplicación (~$5 a $15 USD/mes, a nombre de Fracht).</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-sky-700 font-bold text-sm leading-none">•</span>
+              <span class="text-emerald-700 font-bold text-sm leading-none">•</span>
               <span><strong>Subdominio Institucional:</strong> Configuración del registro DNS (ej. <code>onboarding.fracht.com.ar</code>) apuntando al servidor.</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-sky-700 font-bold text-sm leading-none">•</span>
+              <span class="text-emerald-700 font-bold text-sm leading-none">•</span>
               <span><strong>Casilla de Correo / SMTP:</strong> Acceso a la cuenta de email emisora para enviar las alertas internas (ej. Office 365 de Fracht).</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-sky-700 font-bold text-sm leading-none">•</span>
+              <span class="text-emerald-700 font-bold text-sm leading-none">•</span>
               <span><strong>Operación del Panel:</strong> Revisión diaria de presentaciones, aprobación y descarga de planillas para su sistema contable.</span>
             </li>
           </ul>
 
           <!-- Aclaración Importante -->
-          <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 text-[11px] text-slate-600 leading-relaxed">
-            💡 <em>Nota: Si Fracht Group prefiere delegar el 100% de la infraestructura para no gestionar servidores ni tareas técnicas, disponemos de una opción de mantenimiento gestionado integral.</em>
+          <div class="bg-emerald-50/50 p-3.5 rounded-2xl border border-emerald-200/60 text-[11px] text-slate-600 leading-relaxed">
+            💡 <em>Nota: Si Fracht Group prefiere delegar el 100% de la infraestructura para no gestionar servidores ni tareas técnicas, R&amp;D Software Craft dispone de una opción de mantenimiento gestionado integral.</em>
           </div>
         </div>
 
@@ -310,9 +362,9 @@
 
       <!-- Cuadro Detallado de Garantías Oficiales -->
       <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 shadow-2xs space-y-3.5">
-        <div class="flex items-center gap-2 text-[#003B64] font-bold font-brand text-xs uppercase tracking-wider">
+        <div class="flex items-center gap-2 text-[#064E3B] font-bold font-brand text-xs uppercase tracking-wider">
           <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">🛡️</span>
-          Póliza de Garantía y Respaldo Técnico del Software
+          Póliza de Garantía y Respaldo Técnico del Software (R&amp;D Software Craft)
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           
@@ -325,8 +377,8 @@
             </p>
           </div>
 
-          <div class="bg-sky-50/70 p-4 rounded-2xl border border-sky-200/80 space-y-1.5">
-            <div class="font-bold text-sky-950 font-brand flex items-center gap-1.5">
+          <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-1.5">
+            <div class="font-bold text-slate-900 font-brand flex items-center gap-1.5">
               <span>🔒 Garantía de Estabilidad y Continuidad (12 Meses)</span>
             </div>
             <p class="text-slate-600 leading-relaxed">
@@ -341,77 +393,77 @@
     <!-- 3. INFRAESTRUCTURA TÉCNICA REQUERIDA -->
     <section class="space-y-5">
       <div>
-        <span class="fracht-pill">
+        <span class="rd-pill">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
           3. Infraestructura Técnica (Económica, Ligera y Segura)
         </span>
-        <h2 class="text-xl sm:text-2xl font-black font-brand text-[#003B64] mt-3">¿Dónde se aloja la información y los archivos?</h2>
+        <h2 class="text-xl sm:text-2xl font-black font-brand text-[#064E3B] mt-3">¿Dónde se aloja la información y los archivos?</h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         
         <!-- Componente 1: Servidor & Backend -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-          <div class="w-8 h-8 rounded-xl bg-sky-100 text-[#003B64] flex items-center justify-center font-bold text-sm">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2 card-hover-effect">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm">
             🖥️
           </div>
-          <h4 class="text-xs font-bold font-brand text-[#003B64]">Servidor & Backend Propio</h4>
+          <h4 class="text-xs font-bold font-brand text-[#064E3B]">Servidor &amp; Backend Propio</h4>
           <p class="text-[11px] text-slate-600 leading-relaxed">
             Servidor Cloud Linux (VPS) optimizado que ejecuta el backend de la aplicación, gestiona los formularios y atiende las peticiones del panel administrativo de forma rápida y aislada.
           </p>
-          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pt-1">Costo est.: ~$5 - $15 USD/mes</div>
+          <div class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider pt-1">Costo est.: ~$5 - $15 USD/mes</div>
         </div>
 
         <!-- Componente 2: Base de Datos & PDFs -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-          <div class="w-8 h-8 rounded-xl bg-sky-100 text-[#003B64] flex items-center justify-center font-bold text-sm">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2 card-hover-effect">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm">
             🗄️
           </div>
-          <h4 class="text-xs font-bold font-brand text-[#003B64]">Base de Datos & Repositorio PDF</h4>
+          <h4 class="text-xs font-bold font-brand text-[#064E3B]">Base de Datos &amp; Repositorio PDF</h4>
           <p class="text-[11px] text-slate-600 leading-relaxed">
             Base de datos relacional para resguardar las solicitudes de clientes, junto a un directorio de almacenamiento privado y protegido para los archivos PDF (fuera del acceso público de internet).
           </p>
-          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pt-1">Costo est.: ~$1 - $3 USD/mes</div>
+          <div class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider pt-1">Costo est.: ~$1 - $3 USD/mes</div>
         </div>
 
         <!-- Componente 3: Servicio de Correo SMTP -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
-          <div class="w-8 h-8 rounded-xl bg-sky-100 text-[#003B64] flex items-center justify-center font-bold text-sm">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2 card-hover-effect">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm">
             ✉️
           </div>
-          <h4 class="text-xs font-bold font-brand text-[#003B64]">Servicio de Alertas por Email</h4>
+          <h4 class="text-xs font-bold font-brand text-[#064E3B]">Servicio de Alertas por Email</h4>
           <p class="text-[11px] text-slate-600 leading-relaxed">
             Conexión SMTP estándar que dispara avisos instantáneos al equipo de administración al recibirse una solicitud. Puede utilizar la propia cuenta de correo corporativa de Fracht.
           </p>
-          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider pt-1">Costo est.: $0 USD (incluido en su suite)</div>
+          <div class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider pt-1">Costo est.: $0 USD (incluido en su suite)</div>
         </div>
 
       </div>
     </section>
 
     <!-- 4. SERVICIO OPCIONAL: MANTENIMIENTO E INFRAESTRUCTURA GESTIONADA -->
-    <section class="bg-gradient-to-r from-[#183650] to-[#0A4D74] text-white rounded-3xl p-6 sm:p-8 space-y-4 border border-[#003B64] shadow-md">
+    <section class="bg-gradient-to-r from-[#0B1E19] via-[#064E3B] to-[#047857] text-white rounded-3xl p-6 sm:p-8 space-y-4 border border-emerald-600/40 shadow-md">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div class="space-y-1">
-          <div class="inline-flex items-center gap-2 bg-sky-400/20 text-sky-200 px-3 py-1 rounded-full text-[10px] font-bold font-brand uppercase tracking-wider border border-sky-300/30">
+          <div class="inline-flex items-center gap-2 bg-emerald-400/20 text-emerald-300 px-3 py-1 rounded-full text-[10px] font-bold font-brand uppercase tracking-wider border border-emerald-300/30">
             ⭐ Modalidad Opcional Llave en Mano
           </div>
-          <h3 class="text-xl font-black font-brand text-white">Servicio de Mantenimiento & Infraestructura Gestionada</h3>
+          <h3 class="text-xl font-black font-brand text-white">Servicio de Mantenimiento &amp; Infraestructura Gestionada</h3>
           <p class="text-xs sm:text-sm text-slate-200 max-w-2xl font-light">
-            Si Fracht Group prefiere delegar el 100% de los servidores, hosting y mantenimiento para no destinar tiempo técnico interno:
+            Si Fracht Group prefiere delegar el 100% de los servidores, hosting y mantenimiento a R&amp;D Software Craft para no destinar tiempo técnico interno:
           </p>
         </div>
         <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/20 text-center shrink-0">
-          <div class="text-[10px] uppercase font-bold text-sky-200">Abono Mensual Fijo</div>
-          <div class="text-2xl font-black font-brand text-emerald-300">$250 <span class="text-xs text-white font-normal">USD/mes</span></div>
+          <div class="text-[10px] uppercase font-bold text-emerald-300">Abono Mensual Fijo</div>
+          <div class="text-2xl font-black font-brand text-white">$250 <span class="text-xs text-emerald-200 font-normal">USD/mes</span></div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-200">
         <div class="bg-white/5 p-3 rounded-xl border border-white/10">
-          🔒 <strong>Hosting & Servidor Incluido:</strong> Nosotros proveemos y administramos el servidor cloud y los certificados de seguridad SSL.
+          🔒 <strong>Hosting &amp; Servidor Incluido:</strong> Nosotros proveemos y administramos el servidor cloud y los certificados de seguridad SSL.
         </div>
         <div class="bg-white/5 p-3 rounded-xl border border-white/10">
           💾 <strong>Backups Automáticos Diarios:</strong> Copias de seguridad automáticas de la base de datos y de todos los legajos PDF.
@@ -425,15 +477,15 @@
     <!-- 5. FIRMA Y RESPONSABLE TÉCNICO -->
     <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
       <div class="space-y-1">
-        <div class="text-[10px] sm:text-xs font-bold font-brand uppercase tracking-wider text-slate-400">Responsable Técnico del Desarrollo</div>
-        <h3 class="text-xl sm:text-2xl font-black font-brand text-[#003B64]">Eduardo Rafael Mendoza</h3>
-        <p class="text-xs text-slate-600">Líder de Desarrollo & Soluciones Tecnológicas</p>
-        <p class="text-[11px] text-[#0A4D74] font-semibold">Propuesta Técnica y Comercial • Fracht Group Argentina</p>
+        <div class="text-[10px] sm:text-xs font-bold font-brand uppercase tracking-wider text-slate-400">Responsable de Gestión del Proyecto</div>
+        <h3 class="text-xl sm:text-2xl font-black font-brand text-[#064E3B]">Eduardo Rafael Mendoza</h3>
+        <p class="text-xs text-slate-600 font-medium">Project Manager</p>
+        <p class="text-[11px] text-emerald-700 font-bold">R&amp;D Software Craft • Boutique Software Engineering</p>
       </div>
 
       <div class="w-full sm:w-auto">
         <a href="index.html" 
-          class="w-full sm:w-auto px-6 py-3.5 bg-[#003B64] hover:bg-[#0A4D74] text-white font-bold font-brand text-xs uppercase tracking-wider rounded-xl shadow-md transition flex items-center justify-center gap-2">
+          class="w-full sm:w-auto px-6 py-3.5 bg-[#064E3B] hover:bg-[#047857] text-white font-bold font-brand text-xs uppercase tracking-wider rounded-xl shadow-md transition flex items-center justify-center gap-2">
           <span>Abrir Demo en Vivo</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -445,12 +497,12 @@
   </main>
 
   <!-- ========================================== -->
-  <!-- FOOTER INSTITUCIONAL                       -->
+  <!-- FOOTER INSTITUCIONAL R&D SOFTWARE CRAFT    -->
   <!-- ========================================== -->
-  <footer class="bg-[#183650] text-slate-400 py-6 border-t border-[#0A4D74] text-xs text-center">
-    <div class="max-w-7xl mx-auto px-4">
-      <p class="font-brand font-medium text-slate-300">Fracht Group Argentina &copy; 2026 • Documento de Implementación MVP</p>
-      <p class="text-[10px] text-slate-400 mt-1">Plataforma de Onboarding Digital de Clientes • Versión 1.0 MVP</p>
+  <footer class="bg-[#0B1E19] text-slate-400 py-6 border-t border-[#064E3B] text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-1">
+      <p class="font-brand font-medium text-slate-300">R&amp;D Software Craft &copy; 2026 • Documento de Implementación Técnica y Comercial</p>
+      <p class="text-[10px] text-slate-400">Preparado exclusivamente para evaluación y contratación por parte de Fracht Group Argentina.</p>
     </div>
   </footer>
 
