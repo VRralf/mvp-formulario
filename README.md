@@ -1,36 +1,21 @@
-# Onboarding Digital de Clientes - Fracht Group Argentina (Demo MVP & Propuesta)
+# MVP Formulario de Onboarding Digital - Fracht Group Argentina
+**Desarrollado por:** R&D Software Craft  
+**Líder / Project Manager:** Eduardo Rafael Mendoza  
 
-Plataforma y prototipo interactivo para demostración, validación comercial y relevamiento del flujo de alta y actualización de clientes de Fracht Group Argentina.
-
----
-
-## 🌐 Enlaces de Acceso Directo (GitHub Pages)
-
-* 📄 **Propuesta Ejecutiva Web:**  
-  👉 **[https://vrralf.github.io/mvp-formulario/propuesta.html](https://vrralf.github.io/mvp-formulario/propuesta.html)**
-
-* 🚀 **Demo Interactiva (Formulario Cliente & Panel Admin):**  
-  👉 **[https://vrralf.github.io/mvp-formulario/](https://vrralf.github.io/mvp-formulario/)**
+Este repositorio contiene la entrega web del MVP y la propuesta técnica/comercial para Fracht Group Argentina.
 
 ---
 
-## 🚀 Módulos Disponibles en la Plataforma
+## 📂 Estructura del Despliegue Web (Cloudflare Pages / GitHub Pages)
 
-1. **📄 Presentación Ejecutiva Institucional (`propuesta.html`):**
-   - Diagnóstico (situación actual manual vs. nueva plataforma digital).
-   - Diagrama de flujo de punta a punta en 5 pasos.
-   - Comparativa de los 2 caminos arquitectónicos (Autónomo vs. Integrado a ERP).
-   - Los 3 niveles de solución (MVP Ágil, Profesional y Enterprise).
-   - Preguntas estratégicas a definir con el cliente.
-   - Firma y autoría de **Eduardo Rafael Mendoza**.
+* **`index.html` (Página Principal):**  
+  Documento de **Propuesta de Implementación Oficial** de *R&D Software Craft*, con especificación de alcance, matriz de responsabilidades, póliza de garantías (30 días operacionales + 12 meses de estabilidad) y desglose de infraestructura.
+  
+* **`demo.html` (Demo Interactiva):**  
+  Prototipo navegable y funcional del **Formulario Público de Alta de Clientes** (con validaciones en vivo, selector de Notas de Débito y dropzone de PDFs) + **Panel de Administración Interno** (con workflow de estados, visualización de legajos y exportador a Excel `.xlsx` y `.csv`).
 
-2. **🌐 Formulario Web del Cliente (`index.html`):**
-   - Formulario adaptado a celulares y computadoras con branding oficial de Fracht Group.
-   - Datos generales con máscara y validador de CUIT.
-   - Aceptación cambiaria (tipo de cambio al día de pago y selector binario Sí/No de Notas de Débito).
-   - 4 dropzones interactivos para adjuntar PDFs respaldatorios.
+* **`styles.css`:**  
+  Estilos corporativos y reglas de diseño responsivo.
 
-3. **🔐 Panel de Gestión Administrativa (`index.html`):**
-   - Vista dual: Tarjetas táctiles en smartphones y tabla completa en computadoras.
-   - Seguimiento de estados (`Pendiente`, `Aprobado`, `Cargado en ERP`).
-   - Visor de legajos y simulación de exportación a Excel / CSV.
+* **`app.js`:**  
+  Lógica client-side para la gestión reactiva de formularios, almacenamiento temporal y exportación de datos.
