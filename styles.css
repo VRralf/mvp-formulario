@@ -16,9 +16,10 @@ body {
   background-color: var(--color-bg-page);
   color: #0F172A;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, .brand-font {
+h1, h2, h3, h4, h5, .brand-font {
   font-family: var(--font-brand);
 }
 
@@ -81,6 +82,35 @@ h1, h2, h3, h4, .brand-font {
   transform: scale(0.99);
 }
 
+/* Tarjetas de Nivel / Tier de la Propuesta */
+.tier-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(0, 59, 100, 0.12);
+}
+
+.tier-card.featured {
+  border: 2px solid #003B64;
+  position: relative;
+}
+
+/* Gradientes y Efectos de la Propuesta */
+.hero-gradient {
+  background: linear-gradient(135deg, #183650 0%, #003B64 50%, #0A4D74 100%);
+}
+
+.card-hover-effect {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  border-color: #003B64;
+}
+
 /* Scrollbar horizontal oculta pero funcional para filtros mobile */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -126,4 +156,18 @@ h1, h2, h3, h4, .brand-font {
 #toast.show {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: #FFFFFF;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .tier-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
 }
